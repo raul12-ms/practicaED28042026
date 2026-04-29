@@ -7,7 +7,7 @@ import java.io.Serializable;
  * 
  * @Author Raúl Martínez Sánchez
  */
-public class Libro implements Serializable {
+public class Libro implements Serializable, Prestable {
 
 	private String isbn;
 	private String titulo;
@@ -21,6 +21,18 @@ public class Libro implements Serializable {
 		this.setPrestado(false);
 	}
 	
+	// *
+		@Override
+		public void prestar() {
+			this.setPrestado(true);
+		}
+
+		@Override
+		public void devolver() {
+			this.setPrestado(false);
+		}
+		
+	// *
 	public boolean isPrestado() {
 		return prestado;
 	}
@@ -53,14 +65,6 @@ public class Libro implements Serializable {
 		this.isbn = isbn;
 	}
 
-	// *
-	public void prestar() {
-		this.setPrestado(true);
-	}
-
-	public void devolver() {
-		this.setPrestado(false);
-	}
 
 	@Override
 	public String toString() {
