@@ -1,7 +1,8 @@
-package com.bibliotech;
+package app;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import modelo.Biblioteca;
 
 /**
  * Clase principal con el menú de la aplicación.
